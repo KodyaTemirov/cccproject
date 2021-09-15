@@ -29,7 +29,7 @@ export default function PostHeader({
                                           <table width="100%" cellSpacing={0} cellPadding={0} border={0}>
                                             <tbody><tr>
                                               <td style={{ textAlign: 'center' }}>
-                                                <div style={{ lineHeight: 'normal' }}><span style={{ color: '#ffffff', letterSpacing: '1px', fontFamily: 'Aleo, Helvetica, Arial, sans-serif', fontSize: '30px', textAlign: 'center', fontWeight: 700 }}>{title}</span></div>
+                                                <div style={{ lineHeight: 'normal' }}><span style={{ color: '#ffffff', letterSpacing: '1px', fontFamily: 'Aleo, Helvetica, Arial, sans-serif', fontSize: '30px', textAlign: 'center', fontWeight: 700, padding: "20px", display: "block" }}>{title}</span></div>
                                               </td>
                                             </tr>
                                             </tbody></table>
