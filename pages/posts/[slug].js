@@ -5,7 +5,6 @@ import PostBody from '../../components/post-body'
 import MoreStories from '../../components/more-stories'
 import Header from '../../components/header'
 import PostHeader from '../../components/post-header'
-import SectionSeparator from '../../components/section-separator'
 import Layout from '../../components/layout'
 import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api'
 import PostTitle from '../../components/post-title'
@@ -23,40 +22,35 @@ export default function Post({ post, posts, preview }) {
 
   return (
     <Layout preview={preview}>
-      <Container>
-        <Header />
-        {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
-        ) : (
-          <>
-            <article>
-              <Head>
-                <title>
-                  {post.title}
-                </title>
-                <meta
-                  property="og:image"
-                  content={post.featuredImage?.node?.sourceUrl}
-                />
-              </Head>
-              <PostHeader
-                title={post.title}
-                coverImage={post.featuredImage?.node}
-                date={post.date}
-                author={post.author?.node}
-                categories={post.categories}
+      <Header />
+      {router.isFallback ? (
+        <PostTitle>Loading…</PostTitle>
+      ) : (
+        <>
+          <article>
+            <Head>
+              <title>
+                {post.title}
+              </title>
+              <meta
+                property="og:image"
+                content={post.featuredImage?.node?.sourceUrl}
               />
-              <PostBody content={post.content} />
-              <footer>
-                {post.tags.edges.length > 0 && <Tags tags={post.tags} />}
-              </footer>
-            </article>
+            </Head>
+            <PostHeader
+              title={post.title}
+              coverImage={post.featuredImage?.node}
 
-            <SectionSeparator />
-            {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-          </>
-        )}
-      </Container>
+            />
+            <PostBody content={post.content} />
+            <footer>
+              {post.tags.edges.length > 0 && <Tags tags={post.tags} />}
+            </footer>
+          </article>
+
+
+        </>
+      )}
     </Layout>
   )
 }
