@@ -20,8 +20,9 @@ export default function PostHeader({
                           <td style={{ width: '736px' }}>
                             <table cellSpacing={0} cellPadding={0} border={0} align="left">
                               <tbody><tr>
-                                <td style={{ backgroundRepeat: 'no-repeat !important', backgroundPosition: 'center center !important', backgroundSize: 'cover !important', borderCollapse: 'separate !important' }} width={736} background={coverImage?.sourceUrl} style={{ backgroundSize: "cover" }}>
-                                  <div>
+                                <td id="image" style={{ backgroundRepeat: 'no-repeat !important', backgroundPosition: 'center center !important', backgroundSize: 'cover !important', borderCollapse: 'separate !important' }} width={736} style={{ position: "relative" }}>
+                                  <img src={coverImage?.sourceUrl} alt='' style={{ position: "absolute", zIndex: 1 }} />
+                                  <div style={{ position: "relative", zIndex: 2 }}>
                                     <table width="100%" cellSpacing={0} cellPadding={0} border={0}>
                                       <tbody><tr>
                                         <td>
