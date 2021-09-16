@@ -1,11 +1,11 @@
 import Footer from '../components/footer'
 import Meta from '../components/meta'
 
-export default function Layout({ children }) {
+export default function Layout({ children, id }) {
   return (
     <>
       <Meta />
-      <table width="100%" cellspacing="0" cellpadding="0" border="0">
+      <table width="100%" cellspacing="0" cellpadding="0" border="0" id={id}>
         <tbody>
           <tr>
             <td style={{ backgroundColor: "#e5e5e5", borderCollapse: "separate !important" }} valign="top" align="center">

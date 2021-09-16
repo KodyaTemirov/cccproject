@@ -1,18 +1,20 @@
+import * as React from "react";
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
-import Container from '../../components/container'
 import PostBody from '../../components/post-body'
-import MoreStories from '../../components/more-stories'
 import Header from '../../components/header'
 import PostHeader from '../../components/post-header'
 import Layout from '../../components/layout'
 import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api'
 import PostTitle from '../../components/post-title'
 import Head from 'next/head'
+import dynamic from "next/dynamic";
+const GeneratePDF = dynamic(() => import("../../components/generatePDF"), { ssr: false });
 
 import Tags from '../../components/tags'
 
 export default function Post({ post, posts, preview }) {
+  const ref = React.useRef();
   const router = useRouter()
   const morePosts = posts?.edges
 
@@ -21,7 +23,7 @@ export default function Post({ post, posts, preview }) {
   }
 
   return (
-    <Layout preview={preview}>
+    <Layout preview={preview} ref={ref} id={"content"}>
       <Header />
       {router.isFallback ? (
         <PostTitle>Loading…</PostTitle>
@@ -48,7 +50,7 @@ export default function Post({ post, posts, preview }) {
             </footer>
           </article>
 
-
+          <GeneratePDF html={ref} />
         </>
       )}
     </Layout>

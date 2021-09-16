@@ -20,7 +20,7 @@ export default function PostHeader({
                           <td style={{ width: '736px' }}>
                             <table cellSpacing={0} cellPadding={0} border={0} align="left">
                               <tbody><tr>
-                                <td style={{ backgroundRepeat: 'no-repeat !important', backgroundPosition: 'center center !important', backgroundSize: 'cover !important', borderCollapse: 'separate !important' }} width={736} background={coverImage?.sourceUrl}>
+                                <td style={{ backgroundRepeat: 'no-repeat !important', backgroundPosition: 'center center !important', backgroundSize: 'cover !important', borderCollapse: 'separate !important' }} width={736} background={coverImage?.sourceUrl} style={{ backgroundSize: "cover" }}>
                                   <div>
                                     <table width="100%" cellSpacing={0} cellPadding={0} border={0}>
                                       <tbody><tr>
