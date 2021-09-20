@@ -44,13 +44,15 @@ export default function Post({ post, posts, preview }) {
               coverImage={post.featuredImage?.node}
 
             />
+
+            <GeneratePDF html={ref} title={post.title} />
+
             <PostBody content={post.content} />
             <footer>
               {post.tags.edges.length > 0 && <Tags tags={post.tags} />}
             </footer>
           </article>
 
-          <GeneratePDF html={ref} />
         </>
       )}
     </Layout>
