@@ -45,7 +45,7 @@ export default function Post({ post, posts, preview }) {
 
             />
 
-            <GeneratePDF html={ref} title={post.title} />
+            <GeneratePDF html={ref} title={post.title} wordVersion={post.wordVersion} slug={post.slug} />
 
             <PostBody content={post.content} />
             <footer>

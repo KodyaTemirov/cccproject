@@ -2,7 +2,7 @@ import React from "react";
 import { jsPDF } from "jspdf";
 
 
-const GeneratePdf = ({ html, title }) => {
+const GeneratePdf = ({ html, title, wordVersion, slug }) => {
     const generatePdf = () => {
         const doc = new jsPDF("p", "pt", [800, 1132.1]);
 
@@ -12,7 +12,7 @@ const GeneratePdf = ({ html, title }) => {
             }
         })
     };
-
+    console.log("word", `https://commonwealthchamber.com/${slug}`)
     return (
         <>
             <tr>
@@ -29,7 +29,7 @@ const GeneratePdf = ({ html, title }) => {
                                                         <table width="100%" cellSpacing={0} cellPadding={0} border={0}>
                                                             <tbody><tr>
                                                                 <td className="eh" style={{ paddingLeft: '32px', textAlign: 'left', height: '40px' }}>
-                                                                    <div style={{ lineHeight: 'normal' }}><a target="_blank" href="#"><span style={{ color: '#a8a8a9', fontFamily: 'PT Sans, Helvetica, Arial, sans-serif', fontSize: '14px', textDecoration: 'underline', textAlign: 'left' }}>View online</span></a></div>
+                                                                    <div style={{ lineHeight: 'normal' }}><a target="_blank" href={`https://commonwealthchamber.com/${slug}`}><span style={{ color: '#a8a8a9', fontFamily: 'PT Sans, Helvetica, Arial, sans-serif', fontSize: '14px', textDecoration: 'underline', textAlign: 'left' }}>View online</span></a></div>
                                                                 </td>
                                                             </tr>
                                                             </tbody></table>
@@ -47,7 +47,8 @@ const GeneratePdf = ({ html, title }) => {
                                                         <table width="100%" cellSpacing={0} cellPadding={0} border={0}>
                                                             <tbody><tr>
                                                                 <td className="eh" style={{ textAlign: 'right', height: '40px' }}>
-                                                                    <div style={{ lineHeight: 'normal' }}><a target="_blank" href="#"><span style={{ color: '#a8a8a9', fontFamily: 'PT Sans, Helvetica, Arial, sans-serif', fontSize: '14px', textDecoration: 'underline', textAlign: 'right' }}>Word version</span></a></div>
+                                                                    <div style={{ lineHeight: 'normal' }}><a target="_blank" href={wordVersion.wordversion.mediaItemUrl}><span style={{ color: '#a8a8a9', fontFamily: 'PT Sans, Helvetica, Arial, sans-serif', fontSize: '14px', textDecoration: 'underline', textAlign: 'right' }}>Word version</span></a></div>
+
                                                                 </td>
                                                             </tr>
                                                             </tbody></table>
