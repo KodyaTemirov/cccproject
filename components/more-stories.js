@@ -2,7 +2,7 @@ import PostPreview from '../components/post-preview'
 
 export default function MoreStories({ posts }) {
   return (
-    <section>
+    <section className="p-8">
       <h2 className="mb-8 text-2xl font-bold tracking-tighter leading-tight">
         More Stories
       </h2>
