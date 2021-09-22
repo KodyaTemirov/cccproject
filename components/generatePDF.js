@@ -29,7 +29,8 @@ const GeneratePdf = ({ html, title, wordVersion, slug }) => {
                                                         <table width="100%" cellSpacing={0} cellPadding={0} border={0}>
                                                             <tbody><tr>
                                                                 <td className="eh" style={{ paddingLeft: '32px', textAlign: 'left', height: '40px' }}>
-                                                                    <div style={{ lineHeight: 'normal' }}><a target="_blank" href={`https://commonwealthchamber.com/${slug}`}><span style={{ color: '#a8a8a9', fontFamily: 'PT Sans, Helvetica, Arial, sans-serif', fontSize: '14px', textDecoration: 'underline', textAlign: 'left' }}>View online</span></a></div>
+                                                                    {wordVersion.wordversion !== null ?
+                                                                        <div style={{ lineHeight: 'normal' }}><a target="_blank" href={`https://commonwealthchamber.com/${slug}`}><span style={{ color: '#a8a8a9', fontFamily: 'PT Sans, Helvetica, Arial, sans-serif', fontSize: '14px', textDecoration: 'underline', textAlign: 'left' }}>View online</span></a></div> : null}
                                                                 </td>
                                                             </tr>
                                                             </tbody></table>
